@@ -403,6 +403,8 @@ Register → Login → Search Station → View Slots → Book Slot
 → Pay (Bank+OTP / Cash) → View History
 ```
 
+Note:(Registration pw should be more than 8 letters with one number and one alphabet and one special character)
+
 ### 🏪 Station Owner Flow
 
 ```
