@@ -25,6 +25,7 @@ A full-stack web application for managing Electric Vehicle (EV) charging infrast
 ## ✨ Features
 
 ### 🚗 For EV Users (Customers)
+
 - **Station Discovery** — Search charging stations by location with distance calculation
 - **Real-time Slot Availability** — View free/occupied slots with live status indicators
 - **Advance Booking** — Reserve specific slots for a chosen date and time
@@ -33,6 +34,7 @@ A full-stack web application for managing Electric Vehicle (EV) charging infrast
 - **Booking History** — Track all past and current bookings with status badges
 
 ### 🏪 For Station Owners
+
 - **Station Registration** — Register with location, charger count, and contact details
 - **Slot Management** — Visual grid showing real-time slot occupancy
 - **Charging Control** — Start/stop charging sessions for vehicles
@@ -40,11 +42,13 @@ A full-stack web application for managing Electric Vehicle (EV) charging infrast
 - **Revenue Reports** — View detailed booking and revenue reports
 
 ### 🛡️ For Administrators
+
 - **Station Approval** — Approve or reject new station registrations
 - **Platform Monitoring** — Oversee all stations, bookings, and users
 - **System Management** — Manage station listings and configurations
 
 ### 🎨 UI/UX Highlights
+
 - **Electric Dark Theme** — Premium neon cyan/green glassmorphism design
 - **Responsive Design** — Bootstrap 4 grid, mobile-friendly layout
 - **Smooth Animations** — GPU-accelerated fade-in transitions and hover effects
@@ -56,35 +60,35 @@ A full-stack web application for managing Electric Vehicle (EV) charging infrast
 
 ## 🛠️ Tech Stack
 
-| Layer | Technology | Version |
-|-------|-----------|---------|
-| **Language** | Java | 17 (LTS) |
-| **Backend** | Jakarta Servlet API | 6.0.0 |
-| **Frontend Views** | Jakarta Server Pages (JSP) | 3.1.1 |
-| **Template Engine** | JSTL (Jakarta Standard Tag Library) | 3.0.0 |
-| **CSS Framework** | Bootstrap | 4.x |
-| **Custom Styling** | Vanilla CSS (Electric Theme) | — |
-| **Database** | MySQL | 8.x |
-| **JDBC Driver** | MySQL Connector/J | 8.3.0 |
-| **Application Server** | Apache Tomcat (via Cargo Plugin) | 10.1.16 |
-| **Build Tool** | Apache Maven | 3.9.6 |
-| **Packaging** | WAR (Web Application Archive) | — |
+| Layer                  | Technology                          | Version  |
+| ---------------------- | ----------------------------------- | -------- |
+| **Language**           | Java                                | 17 (LTS) |
+| **Backend**            | Jakarta Servlet API                 | 6.0.0    |
+| **Frontend Views**     | Jakarta Server Pages (JSP)          | 3.1.1    |
+| **Template Engine**    | JSTL (Jakarta Standard Tag Library) | 3.0.0    |
+| **CSS Framework**      | Bootstrap                           | 4.x      |
+| **Custom Styling**     | Vanilla CSS (Electric Theme)        | —        |
+| **Database**           | MySQL                               | 8.x      |
+| **JDBC Driver**        | MySQL Connector/J                   | 8.3.0    |
+| **Application Server** | Apache Tomcat (via Cargo Plugin)    | 10.1.16  |
+| **Build Tool**         | Apache Maven                        | 3.9.6    |
+| **Packaging**          | WAR (Web Application Archive)       | —        |
 
 ### Frameworks & Libraries Used
 
-| Library | Purpose |
-|---------|---------|
-| **Jakarta Servlet 6.0** | Request handling, session management, URL routing |
-| **Jakarta JSP 3.1** | Server-side HTML rendering with embedded Java |
-| **JSTL 3.0** | Template logic (`c:forEach`, `c:if`, `c:choose`) |
-| **Bootstrap 4** | Responsive grid, components, navigation |
-| **jQuery 3.x** | DOM manipulation, AJAX, event handling |
-| **AOS (Animate On Scroll)** | Scroll-triggered animations |
-| **Owl Carousel** | Image carousels and sliders |
-| **Stellar.js** | Parallax scrolling effects |
-| **Open Iconic** | Icon font set |
-| **Magnific Popup** | Lightbox and popup dialogs |
-| **Google Maps API** | Station location mapping |
+| Library                     | Purpose                                           |
+| --------------------------- | ------------------------------------------------- |
+| **Jakarta Servlet 6.0**     | Request handling, session management, URL routing |
+| **Jakarta JSP 3.1**         | Server-side HTML rendering with embedded Java     |
+| **JSTL 3.0**                | Template logic (`c:forEach`, `c:if`, `c:choose`)  |
+| **Bootstrap 4**             | Responsive grid, components, navigation           |
+| **jQuery 3.x**              | DOM manipulation, AJAX, event handling            |
+| **AOS (Animate On Scroll)** | Scroll-triggered animations                       |
+| **Owl Carousel**            | Image carousels and sliders                       |
+| **Stellar.js**              | Parallax scrolling effects                        |
+| **Open Iconic**             | Icon font set                                     |
+| **Magnific Popup**          | Lightbox and popup dialogs                        |
+| **Google Maps API**         | Station location mapping                          |
 
 ---
 
@@ -129,11 +133,11 @@ A full-stack web application for managing Electric Vehicle (EV) charging infrast
 
 ### Design Pattern: **MVC (Model-View-Controller)**
 
-| Component | Implementation |
-|-----------|---------------|
-| **Model** | JDBC queries within Servlets + `DBConnection.java` utility |
-| **View** | JSP pages with JSTL tags (`/webapp/jsp/`) |
-| **Controller** | Java Servlets handling HTTP requests (`/servlet/`) |
+| Component      | Implementation                                             |
+| -------------- | ---------------------------------------------------------- |
+| **Model**      | JDBC queries within Servlets + `DBConnection.java` utility |
+| **View**       | JSP pages with JSTL tags (`/webapp/jsp/`)                  |
+| **Controller** | Java Servlets handling HTTP requests (`/servlet/`)         |
 
 ---
 
@@ -144,66 +148,71 @@ A full-stack web application for managing Electric Vehicle (EV) charging infrast
 ### Tables
 
 #### `ev_register` — EV User Accounts
-| Column | Type | Description |
-|--------|------|-------------|
-| `id` | INT (PK, AI) | Unique user ID |
-| `name` | VARCHAR(255) | Full name |
-| `address` | VARCHAR(255) | Residential address |
-| `mobile` | VARCHAR(255) | Phone number |
-| `email` | VARCHAR(255) | Email address |
-| `account` | VARCHAR(255) | Bank account number |
-| `card` | VARCHAR(255) | Card number |
-| `bank` | VARCHAR(255) | Bank name |
-| `amount` | DOUBLE | Wallet balance |
-| `uname` | VARCHAR(255) | Login username |
-| `pass` | VARCHAR(255) | Login password |
-| `latitude` | VARCHAR(255) | User location latitude |
+
+| Column      | Type         | Description             |
+| ----------- | ------------ | ----------------------- |
+| `id`        | INT (PK, AI) | Unique user ID          |
+| `name`      | VARCHAR(255) | Full name               |
+| `address`   | VARCHAR(255) | Residential address     |
+| `mobile`    | VARCHAR(255) | Phone number            |
+| `email`     | VARCHAR(255) | Email address           |
+| `account`   | VARCHAR(255) | Bank account number     |
+| `card`      | VARCHAR(255) | Card number             |
+| `bank`      | VARCHAR(255) | Bank name               |
+| `amount`    | DOUBLE       | Wallet balance          |
+| `uname`     | VARCHAR(255) | Login username          |
+| `pass`      | VARCHAR(255) | Login password          |
+| `latitude`  | VARCHAR(255) | User location latitude  |
 | `longitude` | VARCHAR(255) | User location longitude |
 
 #### `ev_station` — Charging Station Details
-| Column | Type | Description |
-|--------|------|-------------|
-| `id` | INT (PK, AI) | Unique station ID |
-| `name` | VARCHAR(255) | Station name |
-| `stype` | VARCHAR(255) | Station type (AC/DC) |
-| `num_charger` | INT | Number of charging slots |
-| `area` | VARCHAR(255) | Station area |
-| `city` | VARCHAR(255) | City |
-| `lat` / `lon` | VARCHAR(255) | GPS coordinates |
-| `uname` / `pass` | VARCHAR(255) | Login credentials |
-| `status` | INT | Approval status (0 = Pending, 1 = Approved) |
-| `distance` | DOUBLE | Computed distance from user |
+
+| Column           | Type         | Description                                 |
+| ---------------- | ------------ | ------------------------------------------- |
+| `id`             | INT (PK, AI) | Unique station ID                           |
+| `name`           | VARCHAR(255) | Station name                                |
+| `stype`          | VARCHAR(255) | Station type (AC/DC)                        |
+| `num_charger`    | INT          | Number of charging slots                    |
+| `area`           | VARCHAR(255) | Station area                                |
+| `city`           | VARCHAR(255) | City                                        |
+| `lat` / `lon`    | VARCHAR(255) | GPS coordinates                             |
+| `uname` / `pass` | VARCHAR(255) | Login credentials                           |
+| `status`         | INT          | Approval status (0 = Pending, 1 = Approved) |
+| `distance`       | DOUBLE       | Computed distance from user                 |
 
 #### `ev_booking` — Booking & Charging Records
-| Column | Type | Description |
-|--------|------|-------------|
-| `id` | INT (PK, AI) | Unique booking ID |
-| `uname` | VARCHAR(255) | Booked by (username) |
-| `station` | VARCHAR(255) | Station name |
-| `carno` | VARCHAR(255) | Vehicle registration number |
-| `slot` | INT | Assigned slot number |
-| `plan` | INT | Charging plan (1 / 2 / 3) |
-| `amount` | DOUBLE | Payment amount |
-| `rdate` / `rtime` | VARCHAR | Reservation date & time |
-| `edate` / `etime` | VARCHAR | End date & time |
-| `otp` | VARCHAR(255) | Generated OTP for bank payment |
-| `charge_st` | INT | Charging status (1=Pending, 2=Charging, 3=Done) |
-| `pay_mode` | VARCHAR(255) | Payment mode (Bank / Cash) |
-| `pay_st` | INT | Payment status (1=Unpaid, 2=Paid) |
-| `status` | INT | Booking status (1=Active, 3=History) |
+
+| Column            | Type         | Description                                     |
+| ----------------- | ------------ | ----------------------------------------------- |
+| `id`              | INT (PK, AI) | Unique booking ID                               |
+| `uname`           | VARCHAR(255) | Booked by (username)                            |
+| `station`         | VARCHAR(255) | Station name                                    |
+| `carno`           | VARCHAR(255) | Vehicle registration number                     |
+| `slot`            | INT          | Assigned slot number                            |
+| `plan`            | INT          | Charging plan (1 / 2 / 3)                       |
+| `amount`          | DOUBLE       | Payment amount                                  |
+| `rdate` / `rtime` | VARCHAR      | Reservation date & time                         |
+| `edate` / `etime` | VARCHAR      | End date & time                                 |
+| `otp`             | VARCHAR(255) | Generated OTP for bank payment                  |
+| `charge_st`       | INT          | Charging status (1=Pending, 2=Charging, 3=Done) |
+| `pay_mode`        | VARCHAR(255) | Payment mode (Bank / Cash)                      |
+| `pay_st`          | INT          | Payment status (1=Unpaid, 2=Paid)               |
+| `status`          | INT          | Booking status (1=Active, 3=History)            |
 
 #### `ev_slot` — Slot Availability Tracker
-| Column | Type | Description |
-|--------|------|-------------|
-| `id` | INT (PK, AI) | Unique slot record ID |
-| `station` | VARCHAR(255) | Parent station name |
-| `slot` | INT | Slot number |
+
+| Column    | Type         | Description           |
+| --------- | ------------ | --------------------- |
+| `id`      | INT (PK, AI) | Unique slot record ID |
+| `station` | VARCHAR(255) | Parent station name   |
+| `slot`    | INT          | Slot number           |
 
 #### `ev_admin` — Admin Credentials
-| Column | Type | Description |
-|--------|------|-------------|
+
+| Column     | Type              | Description    |
+| ---------- | ----------------- | -------------- |
 | `username` | VARCHAR(255) (PK) | Admin username |
-| `password` | VARCHAR(255) | Admin password |
+| `password` | VARCHAR(255)      | Admin password |
 
 ---
 
@@ -293,12 +302,12 @@ ev_charging_java/
 
 Before running this project, ensure you have the following installed:
 
-| Requirement | Version | Download |
-|-------------|---------|----------|
-| **Java JDK** | 17 or higher | [Oracle JDK](https://www.oracle.com/java/technologies/downloads/) / [OpenJDK](https://adoptium.net/) |
-| **MySQL Server** | 8.0+ | [MySQL Downloads](https://dev.mysql.com/downloads/mysql/) |
-| **Apache Maven** | 3.9.x (bundled) | Included in `tools/` directory |
-| **Git** | Latest | [Git Downloads](https://git-scm.com/downloads) |
+| Requirement      | Version         | Download                                                                                             |
+| ---------------- | --------------- | ---------------------------------------------------------------------------------------------------- |
+| **Java JDK**     | 17 or higher    | [Oracle JDK](https://www.oracle.com/java/technologies/downloads/) / [OpenJDK](https://adoptium.net/) |
+| **MySQL Server** | 8.0+            | [MySQL Downloads](https://dev.mysql.com/downloads/mysql/)                                            |
+| **Apache Maven** | 3.9.x (bundled) | Included in `tools/` directory                                                                       |
+| **Git**          | Latest          | [Git Downloads](https://git-scm.com/downloads)                                                       |
 
 ### Environment Variables
 
@@ -322,7 +331,7 @@ Follow these steps to set up and run the project locally on your machine.
     ```bash
     mysql -u root -p < database.sql
     ```
-    *This creates the `ev_charging` database and the default admin account.*
+    _This creates the `ev_charging` database and the default admin account._
 
 ### Step 2: Database Configuration
 
@@ -376,17 +385,18 @@ For Windows users, you can use the provided PowerShell script to automate the en
 
 ## Default Login Credentials
 
-| Role | Username | Password |
-|------|----------|----------|
-| Admin | `admin` | `admin` |
-| User | *(Register via the app)* | — |
-| Station Owner | *(Register via the app)* | — |
+| Role          | Username                 | Password |
+| ------------- | ------------------------ | -------- |
+| Admin         | `admin`                  | `admin`  |
+| User          | _(Register via the app)_ | —        |
+| Station Owner | _(Register via the app)_ | —        |
 
----
+## cmd to change admin pw:INSERT IGNORE INTO `ev_admin` (`username`, `password`) VALUES ('admin', 'admin');
 
 ## 👥 User Roles & Workflows
 
 ### 🚗 EV User Flow
+
 ```
 Register → Login → Search Station → View Slots → Book Slot
 → Select Plan (Level 1/2/3) → Arrive at Station → Charging Completes
@@ -394,6 +404,7 @@ Register → Login → Search Station → View Slots → Book Slot
 ```
 
 ### 🏪 Station Owner Flow
+
 ```
 Register → Wait for Admin Approval → Login → View Slot Grid
 → Start Charge (when car arrives) → Stop Charge (when done)
@@ -401,6 +412,7 @@ Register → Wait for Admin Approval → Login → View Slot Grid
 ```
 
 ### 🛡️ Admin Flow
+
 ```
 Login → View Pending Stations → Approve/Reject → Monitor Bookings
 → Delete Invalid Entries
@@ -410,43 +422,43 @@ Login → View Pending Stations → Approve/Reject → Monitor Bookings
 
 ## 🔗 API / Servlet Mapping
 
-| URL Pattern | Servlet | Method | Description |
-|-------------|---------|--------|-------------|
-| `/` | `IndexServlet` | GET | Landing page |
-| `/login` | `LoginServlet` | GET/POST | User authentication |
-| `/login2` | `Login2Servlet` | GET/POST | Station owner login |
-| `/login_admin` | `LoginAdminServlet` | GET/POST | Admin login |
-| `/register` | `RegisterServlet` | GET/POST | User registration |
-| `/reg_station` | `RegStationServlet` | GET/POST | Station registration |
-| `/userhome` | `UserHomeServlet` | GET | User dashboard |
-| `/station` | `StationServlet` | GET/POST | Station search |
-| `/slot` | `SlotServlet` | GET | View available slots |
-| `/book` | `BookServlet` | GET/POST | Create booking |
-| `/select` | `SelectServlet` | GET/POST | Choose charging plan |
-| `/payment` | `PaymentServlet` | GET/POST | Process payment |
-| `/verify_otp` | `VerifyOtpServlet` | GET/POST | OTP verification |
-| `/history` | `HistoryServlet` | GET | Booking history |
-| `/home` | `HomeServlet` | GET | Station owner home |
-| `/view` | `ViewServlet` | GET | View bookings (owner) |
-| `/report` | `ReportServlet` | GET | Station reports |
-| `/charge1` | `Charge1Servlet` | GET | Start charging |
-| `/charge2` | `Charge2Servlet` | GET | Stop charging |
-| `/tariff` | `TariffServlet` | GET | Tariff plans |
-| `/admin` | `AdminServlet` | GET/POST | Admin panel |
-| `/logout` | `LogoutServlet` | GET | Session logout |
+| URL Pattern    | Servlet             | Method   | Description           |
+| -------------- | ------------------- | -------- | --------------------- |
+| `/`            | `IndexServlet`      | GET      | Landing page          |
+| `/login`       | `LoginServlet`      | GET/POST | User authentication   |
+| `/login2`      | `Login2Servlet`     | GET/POST | Station owner login   |
+| `/login_admin` | `LoginAdminServlet` | GET/POST | Admin login           |
+| `/register`    | `RegisterServlet`   | GET/POST | User registration     |
+| `/reg_station` | `RegStationServlet` | GET/POST | Station registration  |
+| `/userhome`    | `UserHomeServlet`   | GET      | User dashboard        |
+| `/station`     | `StationServlet`    | GET/POST | Station search        |
+| `/slot`        | `SlotServlet`       | GET      | View available slots  |
+| `/book`        | `BookServlet`       | GET/POST | Create booking        |
+| `/select`      | `SelectServlet`     | GET/POST | Choose charging plan  |
+| `/payment`     | `PaymentServlet`    | GET/POST | Process payment       |
+| `/verify_otp`  | `VerifyOtpServlet`  | GET/POST | OTP verification      |
+| `/history`     | `HistoryServlet`    | GET      | Booking history       |
+| `/home`        | `HomeServlet`       | GET      | Station owner home    |
+| `/view`        | `ViewServlet`       | GET      | View bookings (owner) |
+| `/report`      | `ReportServlet`     | GET      | Station reports       |
+| `/charge1`     | `Charge1Servlet`    | GET      | Start charging        |
+| `/charge2`     | `Charge2Servlet`    | GET      | Stop charging         |
+| `/tariff`      | `TariffServlet`     | GET      | Tariff plans          |
+| `/admin`       | `AdminServlet`      | GET/POST | Admin panel           |
+| `/logout`      | `LogoutServlet`     | GET      | Session logout        |
 
 ---
 
 ## 🎨 Screenshots
 
-> *After running the application, visit the following pages to see the Electric Theme in action:*
+> _After running the application, visit the following pages to see the Electric Theme in action:_
 
-| Page | URL |
-|------|-----|
-| Landing Page | `http://localhost:8080/ev-charging/` |
-| User Login | `http://localhost:8080/ev-charging/login` |
-| Station Search | `http://localhost:8080/ev-charging/station` |
-| Tariff Plans | `http://localhost:8080/ev-charging/tariff` |
+| Page            | URL                                         |
+| --------------- | ------------------------------------------- |
+| Landing Page    | `http://localhost:8080/ev-charging/`        |
+| User Login      | `http://localhost:8080/ev-charging/login`   |
+| Station Search  | `http://localhost:8080/ev-charging/station` |
+| Tariff Plans    | `http://localhost:8080/ev-charging/tariff`  |
 | Booking History | `http://localhost:8080/ev-charging/history` |
 
 ---
@@ -471,24 +483,31 @@ Login → View Pending Stations → Approve/Reject → Monitor Bookings
 <summary><strong>Click to expand common interview questions about this project</strong></summary>
 
 ### Q: What is the architecture of this project?
+
 **A:** It follows the **MVC (Model-View-Controller)** pattern. Servlets act as Controllers handling HTTP requests, JSP pages serve as the View layer for rendering HTML, and the Model layer uses direct JDBC calls to a MySQL database through a centralized `DBConnection` utility class.
 
 ### Q: Why did you choose Servlets over Spring Boot?
+
 **A:** This project demonstrates a deep understanding of how web frameworks work at the fundamental level — raw HTTP request handling, session management, JDBC connections, and URL routing — without relying on Spring Boot's auto-configuration. This shows core Java competency.
 
 ### Q: How does the payment system work?
+
 **A:** The system supports two payment modes: **Bank** (OTP-verified) and **Cash**. For bank payments, a random 4-digit OTP is generated server-side and stored in the database. The user enters the OTP to complete the transaction. For cash, the station owner manually verifies receipt.
 
 ### Q: How do you handle session management?
+
 **A:** Using Jakarta Servlet's `HttpSession`. After successful login, user data is stored in the session. Each request checks for valid session attributes to enforce authentication. Logout invalidates the session.
 
 ### Q: How is slot availability calculated?
+
 **A:** The `SlotServlet` queries `ev_booking` for active bookings on the current date, aggregates occupied slots, and compares against the station's total `num_charger` count to determine free slots.
 
 ### Q: What security measures are implemented?
+
 **A:** Client-side strong password validation (min 8 chars, uppercase, lowercase, number, special character), password visibility toggle, OTP-based payment verification, and session-based authentication.
 
 ### Q: How is the UI designed?
+
 **A:** Custom **"Electric Theme"** built with Vanilla CSS featuring a dark mode base, neon cyan/green accents, glassmorphism cards, GPU-accelerated animations, and Bootstrap 4 responsive grid.
 
 </details>
